@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c225a4509f684fa1915e47ec444e2809" Name="Diagram1">
+        <EntityTypeShape EntityType="SarasiModel.Food" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SarasiModel.FoodCategory" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SarasiModel.ProductOrder" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SarasiModel.UserLogin" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="SarasiModel.fk_Food" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SarasiModel.Item" Width="1.5" PointX="7.625" PointY="1" />
+        <EntityTypeShape EntityType="SarasiModel.ItemCategory" Width="1.5" PointX="5.375" PointY="1.375" />
+        <AssociationConnector Association="SarasiModel.FK_ITEM" />
+        <EntityTypeShape EntityType="SarasiModel.ReadyMadeProduct" Width="1.5" PointX="9.875" PointY="1.625" />
+        <AssociationConnector Association="SarasiModel.fk_RMProucts" />
+        <EntityTypeShape EntityType="SarasiModel.Cleaner" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SarasiModel.Driver" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SarasiModel.Employee" Width="1.5" PointX="2.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SarasiModel.HeadChef" Width="1.5" PointX="7.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SarasiModel.Manager" Width="1.5" PointX="4.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SarasiModel.Reception" Width="1.5" PointX="6.75" PointY="7.75" />
+        <AssociationConnector Association="SarasiModel.FK_Cleaner_Cleaner" />
+        <EntityTypeShape EntityType="SarasiModel.Vehicle" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="SarasiModel.VehicleCategory" Width="1.5" PointX="9.375" PointY="7.75" />
+        <AssociationConnector Association="SarasiModel.FK_Vehicle_Vehicle" />
+        <AssociationConnector Association="SarasiModel.FK_VehicleCategory_VehicleCategory" />
+        <EntityTypeShape EntityType="SarasiModel.StockAudit" Width="1.5" PointX="9.875" PointY="11.25" />
+        <AssociationConnector Association="SarasiModel.fk_StockAudit" />
+        <EntityTypeShape EntityType="SarasiModel.Order_" Width="1.5" PointX="10.375" PointY="4.75" />
+        <EntityTypeShape EntityType="SarasiModel.OrderFood" Width="1.5" PointX="5.25" PointY="15.375" />
+        <EntityTypeShape EntityType="SarasiModel.OrderReadymadeProduct" Width="1.5" PointX="12.125" PointY="1.5" />
+        <AssociationConnector Association="SarasiModel.FK_OrderFood" />
+        <AssociationConnector Association="SarasiModel.FK_ORDDER_READYMADE" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

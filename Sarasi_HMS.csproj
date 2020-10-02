@@ -1,0 +1,669 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{706FE58C-D608-4BAF-A4DE-DE43B7D4B4DA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sarasi_HMS</RootNamespace>
+    <AssemblyName>Sarasi_HMS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\Downloads\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\Documents\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Tulpep.NotificationWindow, Version=1.1.37.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Tulpep.NotificationWindow.1.1.37\lib\net40\Tulpep.NotificationWindow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddNewRent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewRent.Designer.cs">
+      <DependentUpon>AddNewRent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRentDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRentDetails.Designer.cs">
+      <DependentUpon>AddRentDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="getExpiredItems1_Result.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getExpiredItemsWithinNextMonth_Result.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getExpiredItems_Result.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getExpiredReadyMadesWithinNextMonth_Result.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getExpiredReadyMades_Result.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="getOrderedItems_Result.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemAlerts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemAlerts.Designer.cs">
+      <DependentUpon>ItemAlerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenPOS\BillItemRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KitchenPOS\BillItemRow.Designer.cs">
+      <DependentUpon>BillItemRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cachier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cachier.Designer.cs">
+      <DependentUpon>Cachier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenPOS\ItemCategoryButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KitchenPOS\ItemCategoryButton.Designer.cs">
+      <DependentUpon>ItemCategoryButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenPOS\POSKICard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KitchenPOS\POSKICard.Designer.cs">
+      <DependentUpon>POSKICard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newOrderToPrepare.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="newOrderToPrepare.Designer.cs">
+      <DependentUpon>newOrderToPrepare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderFood.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderReadymadeProduct.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReadyMadrProductAlerts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadyMadrProductAlerts.Designer.cs">
+      <DependentUpon>ReadyMadrProductAlerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant Pos\POSFoodCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Restaurant Pos\POSFoodCard.Designer.cs">
+      <DependentUpon>POSFoodCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleManagementNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleManagementNew.Designer.cs">
+      <DependentUpon>VehicleManagementNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleManagement\vm forms\AddnewVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleManagement\vm forms\AddnewVehicle.Designer.cs">
+      <DependentUpon>AddnewVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleManagement\vm forms\AddVehicleCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleManagement\vm forms\AddVehicleCategory.Designer.cs">
+      <DependentUpon>AddVehicleCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagement\forms\AdditemtoStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockManagement\forms\AdditemtoStock.Designer.cs">
+      <DependentUpon>AdditemtoStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagement\forms\AddNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockManagement\forms\AddNewItem.Designer.cs">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cleaner.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Driver.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManagement\forms\AddFoodCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodManagement\forms\AddFoodCategory.Designer.cs">
+      <DependentUpon>AddFoodCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HeadChef.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagement\userControls\KitchenitemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StockManagement\userControls\KitchenitemCard.Designer.cs">
+      <DependentUpon>KitchenitemCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReadyMadeProduct.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Reception.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockAudit.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagement\forms\AddItemCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockManagement\forms\AddItemCategory.Designer.cs">
+      <DependentUpon>AddItemCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManagement\forms\AddNewFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodManagement\forms\AddNewFood.Designer.cs">
+      <DependentUpon>AddNewFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManagement\forms\Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodManagement\forms\Categories.Designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBModels.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModels.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModels.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModels.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Food.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FoodAlert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FoodAlert.Designer.cs">
+      <DependentUpon>FoodAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodCategory.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant Pos\foodcategoryButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Restaurant Pos\foodcategoryButton.Designer.cs">
+      <DependentUpon>foodcategoryButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManagement\forms\FoodManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodManagement\forms\FoodManagement.Designer.cs">
+      <DependentUpon>FoodManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FoodProgress.Designer.cs">
+      <DependentUpon>FoodProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ItemAlert.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemAlert.Designer.cs">
+      <DependentUpon>ItemAlert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagement\forms\ItemCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockManagement\forms\ItemCategories.Designer.cs">
+      <DependentUpon>ItemCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemCategory.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="itemProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="itemProgress.Designer.cs">
+      <DependentUpon>itemProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenPOS\KitchenPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitchenPOS\KitchenPOS.Designer.cs">
+      <DependentUpon>KitchenPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kitchenPOSSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kitchenPOSSettings.Designer.cs">
+      <DependentUpon>kitchenPOSSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralForms\LoadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralForms\LoadingForm.Designer.cs">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralForms\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GeneralForms\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="POSsettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="POSsettings.Designer.cs">
+      <DependentUpon>POSsettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductOrder.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restaurant Pos\RestaurantPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Restaurant Pos\RestaurantPOS.Designer.cs">
+      <DependentUpon>RestaurantPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagement\forms\StockManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockManagement\forms\StockManagement.Designer.cs">
+      <DependentUpon>StockManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurant Pos\BillRow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Restaurant Pos\BillRow.Designer.cs">
+      <DependentUpon>BillRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManagement\userControls%28FoodM%29\CategoryCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FoodManagement\userControls%28FoodM%29\CategoryCard.Designer.cs">
+      <DependentUpon>CategoryCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestDailyReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TestDailyReport.Designer.cs">
+      <DependentUpon>TestDailyReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testFoodCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="testFoodCard.Designer.cs">
+      <DependentUpon>testFoodCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManagement\userControls%28FoodM%29\FoodItemCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FoodManagement\userControls%28FoodM%29\FoodItemCard.Designer.cs">
+      <DependentUpon>FoodItemCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="testOrderAlerts.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="testOrderAlerts.Designer.cs">
+      <DependentUpon>testOrderAlerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FoodManagement\forms\UpdateFoodCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FoodManagement\forms\UpdateFoodCategories.Designer.cs">
+      <DependentUpon>UpdateFoodCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockManagement\userControls\ItemCategoryCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StockManagement\userControls\ItemCategoryCard.Designer.cs">
+      <DependentUpon>ItemCategoryCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserLogin.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs" />
+    <Compile Include="Vehicle.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleManagement\user controks\vehicleCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VehicleManagement\user controks\vehicleCard.Designer.cs">
+      <DependentUpon>vehicleCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleManagement\vm forms\VehicleCategories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleManagement\vm forms\VehicleCategories.Designer.cs">
+      <DependentUpon>VehicleCategories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleCategory.cs">
+      <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleManagement\user controks\VehicleCategoryCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VehicleManagement\user controks\VehicleCategoryCard.Designer.cs">
+      <DependentUpon>VehicleCategoryCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleManagement\vm forms\VehiclePOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleManagement\vm forms\VehiclePOS.Designer.cs">
+      <DependentUpon>VehiclePOS.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddNewRent.resx">
+      <DependentUpon>AddNewRent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRentDetails.resx">
+      <DependentUpon>AddRentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemAlerts.resx">
+      <DependentUpon>ItemAlerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitchenPOS\BillItemRow.resx">
+      <DependentUpon>BillItemRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cachier.resx">
+      <DependentUpon>Cachier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitchenPOS\ItemCategoryButton.resx">
+      <DependentUpon>ItemCategoryButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitchenPOS\POSKICard.resx">
+      <DependentUpon>POSKICard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newOrderToPrepare.resx">
+      <DependentUpon>newOrderToPrepare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadyMadrProductAlerts.resx">
+      <DependentUpon>ReadyMadrProductAlerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restaurant Pos\POSFoodCard.resx">
+      <DependentUpon>POSFoodCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleManagementNew.resx">
+      <DependentUpon>VehicleManagementNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleManagement\vm forms\AddnewVehicle.resx">
+      <DependentUpon>AddnewVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleManagement\vm forms\AddVehicleCategory.resx">
+      <DependentUpon>AddVehicleCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManagement\forms\AdditemtoStock.resx">
+      <DependentUpon>AdditemtoStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManagement\forms\AddNewItem.resx">
+      <DependentUpon>AddNewItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManagement\forms\AddFoodCategory.resx">
+      <DependentUpon>AddFoodCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManagement\userControls\KitchenitemCard.resx">
+      <DependentUpon>KitchenitemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManagement\forms\AddItemCategory.resx">
+      <DependentUpon>AddItemCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManagement\forms\AddNewFood.resx">
+      <DependentUpon>AddNewFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManagement\forms\Categories.resx">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodAlert.resx">
+      <DependentUpon>FoodAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restaurant Pos\foodcategoryButton.resx">
+      <DependentUpon>foodcategoryButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManagement\forms\FoodManagement.resx">
+      <DependentUpon>FoodManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodProgress.resx">
+      <DependentUpon>FoodProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemAlert.resx">
+      <DependentUpon>ItemAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManagement\forms\ItemCategories.resx">
+      <DependentUpon>ItemCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="itemProgress.resx">
+      <DependentUpon>itemProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitchenPOS\KitchenPOS.resx">
+      <DependentUpon>KitchenPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kitchenPOSSettings.resx">
+      <DependentUpon>kitchenPOSSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralForms\LoadingForm.resx">
+      <DependentUpon>LoadingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneralForms\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="POSsettings.resx">
+      <DependentUpon>POSsettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Restaurant Pos\RestaurantPOS.resx">
+      <DependentUpon>RestaurantPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManagement\forms\StockManagement.resx">
+      <DependentUpon>StockManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restaurant Pos\BillRow.resx">
+      <DependentUpon>BillRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManagement\userControls%28FoodM%29\CategoryCard.resx">
+      <DependentUpon>CategoryCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestDailyReport.resx">
+      <DependentUpon>TestDailyReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testFoodCard.resx">
+      <DependentUpon>testFoodCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManagement\userControls%28FoodM%29\FoodItemCard.resx">
+      <DependentUpon>FoodItemCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testOrderAlerts.resx">
+      <DependentUpon>testOrderAlerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FoodManagement\forms\UpdateFoodCategories.resx">
+      <DependentUpon>UpdateFoodCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockManagement\userControls\ItemCategoryCard.resx">
+      <DependentUpon>ItemCategoryCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleManagement\user controks\vehicleCard.resx">
+      <DependentUpon>vehicleCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleManagement\vm forms\VehicleCategories.resx">
+      <DependentUpon>VehicleCategories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleManagement\user controks\VehicleCategoryCard.resx">
+      <DependentUpon>VehicleCategoryCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleManagement\vm forms\VehiclePOS.resx">
+      <DependentUpon>VehiclePOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DBModels.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBModels.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBModels.edmx.diagram">
+      <DependentUpon>DBModels.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios-13-grey-dark-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brooke-lark-HlNcigvUi4Q-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Light.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FoodLightTheme.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DarkThemee.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\banana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\posDark.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBModels.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBModels.Context.cs</LastGenOutput>
+      <DependentUpon>DBModels.edmx</DependentUpon>
+    </Content>
+    <Content Include="DBModels.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModels.edmx</DependentUpon>
+      <LastGenOutput>DBModels.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\penicilYellow.jpg" />
+    <None Include="Resources\info %281%29.png" />
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
